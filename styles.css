@@ -10,29 +10,29 @@ body {
 /* Navigation Bar */
 nav {
     background-color: #5B3A29;
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centers the nav items */
     align-items: center;
-    height: 40px; /* Collapsed height */
+    height: 50px; /* Adjusted height */
     overflow: hidden;
     transition: height 0.3s ease-in-out;
 }
 
 /* Expand on Hover */
 nav:hover {
-    height: 80px; /* Expanded height */
+    height: 80px; /* Expand height on hover */
 }
 
-/* Navigation Items in One Row */
+/* Single Row Navigation */
 .nav-container {
     display: flex;
-    gap: 1.5cm; /* Adds 1.5cm horizontal space between buttons */
+    gap: 1.5cm; /* Ensure spacing of 1.5cm between links */
 }
 
 /* Style for Navigation Links */
@@ -41,7 +41,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1.5cm; /* Ensure spacing between buttons */
+    gap: 1.5cm; /* This ensures the buttons stay in one row with spacing */
 }
 
 nav ul li {
@@ -64,6 +64,7 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #FF8FA3;
 }
+
 
 
 /* Collapsible Navigation Bar */
