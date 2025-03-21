@@ -50,38 +50,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     generateCalendar();
-
-    // Smooth scrolling + Show only one section at a time
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-list a");
-
-    function showSection(sectionId) {
-        sections.forEach((section) => {
-            if (section.id === sectionId) {
-                section.style.display = "block";
-            } else {
-                section.style.display = "none";
-            }
-        });
-    }
-
-    navLinks.forEach((link) => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            const targetId = this.getAttribute("href").substring(1); // Get the section ID
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 50, // Adjust for navbar height
-                    behavior: "smooth",
-                });
-
-                showSection(targetId);
-            }
-        });
-    });
-
-    // Ensure home section is visible on load
-    showSection("home");
 });
