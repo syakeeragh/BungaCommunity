@@ -37,14 +37,25 @@
             <li>🤝 Organizing community service activities for a greater cause.</li>
         </ul>
     </section>
-    
+
     <!-- Calendar Section -->
     <section id="calendar">
-        <h2>Community Calendar 📅</h2>
-        <p>Stay updated with our upcoming events and activities!</p>
-        <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=Asia/Kuala_Lumpur" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        <h2>Malaysia Public Holidays 📅</h2>
+        <p>Stay updated with Malaysia’s public holidays.</p>
+        <div class="calendar-container">
+            <table class="calendar">
+                <thead>
+                    <tr>
+                        <th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thu</th> <th>Fri</th> <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body">
+                    <!-- Calendar will be generated here -->
+                </tbody>
+            </table>
+        </div>
     </section>
-    
+
     <!-- Gallery Section -->
     <section id="gallery">
         <h2>Gallery 📸</h2>
@@ -57,11 +68,14 @@
     </section>
     
     <!-- WhatsApp Floating Button -->
-    <div class="whatsappicon">
+    <div class="whatsapp-button">
         <a href="https://chat.whatsapp.com/IzLlIzHx02ZJJaUW1qMn5T" target="_blank">
             <img src="whatsappicon.png" alt="WhatsApp">
         </a>
     </div>
+
+    <script src="script.js"></script> <!-- JavaScript for calendar -->
 </body>
 </html>
+
 
