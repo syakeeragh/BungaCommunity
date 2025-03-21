@@ -25,13 +25,10 @@ nav {
 .nav-top, .nav-bottom {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between buttons */
+    gap: 2cm; /* Horizontal space between buttons */
 }
 
-/* Add spacing between the rows */
-.nav-bottom {
-    margin-top: 2cm; /* Adds 2 cm spacing between top and bottom nav rows */
-}
+
 
 nav ul {
     list-style: none;
