@@ -34,24 +34,28 @@ nav {
     text-decoration: none;
     background-color: #FFB6C1;
     color: #5B3A29;
-    font-size: 16px; /* Reduce font size */
+    font-size: 16px;
     font-weight: bold;
-    padding: 8px 15px; /* Reduce padding to make buttons smaller */
-    border-radius: 12px; /* Slightly rounded edges */
+    padding: 10px 20px; /* Slightly bigger padding to center text */
+    border-radius: 12px;
     transition: 0.3s ease-in-out;
-    display: block;
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
     text-align: center;
     position: relative;
-    top: -10px; /* Move buttons up to float */
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Floating shadow effect */
+    top: -5px; /* Reduce the negative top value */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    height: 40px; /* Set a fixed height for better centering */
 }
 
 /* Hover Effect */
 .nav-list li a:hover {
     background-color: #FF8FA3;
-    transform: translateY(-3px); /* Slight lift on hover */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
+
 
 
 /* Logo */
