@@ -51,7 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     generateCalendar();
 
-    // Smooth scrolling effect when clicking navigation links
+    // Show only the first section on load
+    let sections = document.querySelectorAll('.content-section');
+    sections[0].classList.add('active');
+
+    // Smooth scrolling & show only selected section
     document.querySelectorAll('.nav-list a').forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
@@ -59,6 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
+                // Hide all sections
+                sections.forEach(sec => sec.classList.remove('active'));
+
+                // Show the selected section
+                targetSection.classList.add('active');
+
+                // Smooth scroll
                 targetSection.scrollIntoView({
                     behavior: 'smooth'
                 });
@@ -66,4 +77,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
