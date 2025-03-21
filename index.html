@@ -12,25 +12,29 @@
     <!-- Navigation Bar -->
     <nav>
         <ul class="nav-list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#objectives">Objectives</a></li>
-            <li><a href="#calendar">Calendar</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('about')">About</a></li>
+            <li><a href="#" onclick="showSection('objectives')">Objectives</a></li>
+            <li><a href="#" onclick="showSection('calendar')">Calendar</a></li>
+            <li><a href="#" onclick="showSection('gallery')">Gallery</a></li>
         </ul>
     </nav>
 
-    <!-- Home Section -->
-    <header id="home">
+    <!-- Sections -->
+    <section id="home" class="content-section">
         <div class="content">
             <img src="logo.png" alt="Bunga Community Logo" class="logo">
             <h1>Welcome to Bunga Community! 🌸</h1>
             <p>A warm space for women in Penang & nearby to connect and thrive together.</p>
         </div>
-    </header>
+    </section>
 
-    <!-- Objectives Section -->
-    <section id="objectives">
+    <section id="about" class="content-section">
+        <h2>About Us</h2>
+        <p>Bunga Community is a space dedicated to bringing women together, fostering friendships, and supporting each other.</p>
+    </section>
+
+    <section id="objectives" class="content-section">
         <h2>Our Objectives 🌸</h2>
         <ul>
             <li>🌷 Building a friendly space for women to connect & support each other.</li>
@@ -39,8 +43,7 @@
         </ul>
     </section>
 
-    <!-- Calendar Section -->
-    <section id="calendar">
+    <section id="calendar" class="content-section">
         <h2>Bunga's Calendar 📅</h2>
         <p>Stay updated with our events and activities.</p>
         <div class="calendar-container">
@@ -57,8 +60,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
+    <section id="gallery" class="content-section">
         <h2>Gallery 📸</h2>
         <div class="gallery-grid">
             <img src="image1.jpg" alt="Bunga Community Event 1">
@@ -75,6 +77,21 @@
         </a>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll(".content-section").forEach(section => {
+                section.style.display = "none";
+            });
+
+            // Show only the selected section
+            document.getElementById(sectionId).style.display = "block";
+        }
+
+        // Show the home section by default when the page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            showSection('home');
+        });
+    </script>
 </body>
 </html>
