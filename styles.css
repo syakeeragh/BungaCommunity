@@ -1,3 +1,4 @@
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -5,20 +6,31 @@ body {
     color: #333;
     margin: 0;
     padding: 20px;
+    background-image: url('background.jpg'); /* Ensure the file name is correct */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
 }
 
-h1 {
-    font-size: 2.5em;
-    color: #d63384; /* A soft pink */
+/* Darker transparent overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Increased darkness (0.5 = 50%) */
+    z-index: -1; /* Keeps it behind the content */
 }
 
-p {
-    font-size: 1.2em;
-}
-
+/* Navigation bar styling */
 nav {
     background-color: #d63384; /* Pink navbar */
     padding: 10px;
+    position: relative;
+    z-index: 2; /* Ensure navbar stays above overlays */
 }
 
 nav ul {
@@ -40,6 +52,11 @@ nav ul li a {
     font-weight: bold;
 }
 
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Logo positioning */
 .logo {
     text-align: center;
     margin-top: 20px;
@@ -50,33 +67,7 @@ nav ul li a {
     height: auto;
 }
 
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-body {
-    background-image: url('background.jpg'); /* Ensure the file name is correct */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    font-family: 'Arial', sans-serif;
-    position: relative;
-}
-
-/* Darker transparent overlay */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Increased darkness (0.5 = 50%) */
-    z-index: -1; /* Keeps it behind the content */
-}
-
-/* Vertical overlay for better readability */
+/* Vertical overlay to focus attention */
 .center-overlay {
     position: absolute;
     top: 0;
@@ -86,18 +77,23 @@ body::before {
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     z-index: 0;
-    pointer-events: none; /* 🔥 Fix: Allows clicks to pass through */
+    pointer-events: none; /* 🔥 Allows clicks to pass through */
 }
 
-.navbar {
-    position: relative;
-    z-index: 2; /* 🔥 Fix: Ensures navbar stays on top */
-}
-
-/* Ensure text appears above the overlay */
+/* Ensuring content appears above overlays */
 .content {
     position: relative;
-    z-index: 1; /* This makes sure text is above the overlay */
+    z-index: 1; /* Ensures text is above the overlay */
     text-align: center;
-    color: white; /* Ensure readability */
+    color: white; /* Ensures readability */
+}
+
+/* Headings and text styling */
+h1 {
+    font-size: 2.5em;
+    color: #d63384; /* A soft pink */
+}
+
+p {
+    font-size: 1.2em;
 }
