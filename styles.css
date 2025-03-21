@@ -13,6 +13,7 @@ body {
     position: relative;
 }
 
+
 /* Darker transparent overlay for readability */
 body::before {
     content: "";
@@ -91,6 +92,7 @@ nav ul li a:hover {
     pointer-events: none; /* 🔥 Allows clicks to pass through */
 }
 
+
 /* Ensuring content appears above overlays */
 .content {
     position: relative;
@@ -109,6 +111,7 @@ p {
     font-size: 1.2em;
 }
 
+
 .whatsapp-button {
     position: fixed;
     bottom: 20px;
@@ -122,7 +125,7 @@ p {
     width: 100%;
     height: auto;
     border-radius: 50%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
 }
 
