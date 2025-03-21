@@ -84,6 +84,14 @@ body::before {
     transform: translateX(-50%);
     width: 60%; /* Adjust width as needed */
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Adjust darkness */
-    z-index: 0; /* Ensure it stays behind text */
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 0; /* This ensures the overlay stays in the background */
+}
+
+/* Ensure text appears above the overlay */
+.content {
+    position: relative;
+    z-index: 1; /* This makes sure text is above the overlay */
+    text-align: center;
+    color: white; /* Ensure readability */
 }
