@@ -26,7 +26,7 @@ nav {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1.5cm; /* Space between items */
+    gap: 20px;
 }
 
 /* Navigation Links */
@@ -36,17 +36,13 @@ nav {
     color: #5B3A29;
     font-size: 16px;
     font-weight: bold;
-    padding: 10px 20px; /* Slightly bigger padding to center text */
+    padding: 12px 25px;
     border-radius: 12px;
     transition: 0.3s ease-in-out;
     display: flex;
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
-    text-align: center;
-    position: relative;
-    top: -5px; /* Reduce the negative top value */
+    align-items: center;
+    justify-content: center;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    height: 40px; /* Set a fixed height for better centering */
 }
 
 /* Hover Effect */
@@ -56,8 +52,6 @@ nav {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-
-
 /* Logo */
 .logo {
     width: 120px;
@@ -65,14 +59,21 @@ nav {
     margin-bottom: 15px;
 }
 
-/* Home Section */
-header {
-    text-align: center;
+/* Sections */
+section {
     padding: 100px 20px 50px;
+    text-align: center;
 }
 
+/* Headings */
 h1 {
     font-size: 32px;
+    color: #5B3A29;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
     color: #5B3A29;
 }
 
@@ -81,20 +82,7 @@ p {
     color: #754C34;
 }
 
-/* Objectives Section */
-section {
-    padding: 80px 20px 50px; /* Increased top padding */
-    text-align: center;
-}
-
-
-
-h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #5B3A29;
-}
-
+/* Objectives List */
 ul {
     list-style: none;
     padding: 0;
@@ -102,7 +90,7 @@ ul {
 
 ul li {
     font-size: 18px;
-    background: #FFB6C1; /* Brighter pink */
+    background: #FFB6C1;
     padding: 10px;
     margin: 10px auto;
     width: 80%;
