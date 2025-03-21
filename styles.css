@@ -75,3 +75,15 @@ body::before {
     background: rgba(0, 0, 0, 0.5); /* Increased darkness (0.5 = 50%) */
     z-index: -1; /* Keeps it behind the content */
 }
+
+/* Vertical overlay for better readability */
+.center-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%; /* Adjust width as needed */
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Adjust darkness */
+    z-index: 0; /* Ensure it stays behind text */
+}
