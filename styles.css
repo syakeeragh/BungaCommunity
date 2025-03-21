@@ -162,37 +162,43 @@ p {
 /* Objectives Section */
 .objectives-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center; /* Center the row */
     align-items: center;
-    gap: 20px;
-    max-width: 800px;
+    gap: 30px; /* Space between each objective */
+    max-width: 900px;
     margin: 0 auto;
+    padding: 20px;
 }
 
+/* Each objective */
 .objective-item {
     display: flex;
+    flex-direction: column; /* Stack icon on top, text below */
     align-items: center;
-    gap: 15px;
+    text-align: center;
     background: #FFB6C1;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
+    width: 30%; /* Adjusts width for 3 items in a row */
+    max-width: 250px;
 }
 
+/* Icons */
 .objective-item img {
-    width: 50px;
-    height: 50px;
+    width: 75px; /* Set the size to ~20mm */
+    height: 75px;
     border-radius: 10px;
+    object-fit: contain; /* Keeps image inside without distortion */
 }
 
+/* Text */
 .objective-item p {
-    font-size: 18px;
+    font-size: 16px;
     color: #5B3A29;
-    margin: 0;
-    text-align: left;
+    margin-top: 10px; /* Space between icon and text */
 }
+
 
 
 /* WhatsApp Floating Button */
