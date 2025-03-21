@@ -75,7 +75,9 @@ p {
 section {
     padding: 50px 20px;
     text-align: center;
+    margin-top: 50px; /* Adjust this value as needed */
 }
+
 
 h2 {
     font-size: 28px;
