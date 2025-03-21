@@ -177,17 +177,24 @@ p {
     align-items: center;
     text-align: center;
     background: #FFB6C1;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
     width: 30%; /* Adjusts width for 3 items in a row */
-    max-width: 250px;
+    max-width: 270px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect (Expanding/Floating) */
+.objective-item:hover {
+    transform: scale(1.1); /* Makes it slightly bigger */
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Icons */
 .objective-item img {
-    width: 75px; /* Set the size to ~20mm */
-    height: 75px;
+    width: 120px; /* Bigger icons */
+    height: 120px;
     border-radius: 10px;
     object-fit: contain; /* Keeps image inside without distortion */
 }
@@ -198,6 +205,7 @@ p {
     color: #5B3A29;
     margin-top: 10px; /* Space between icon and text */
 }
+
 
 
 
