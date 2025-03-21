@@ -132,3 +132,32 @@ p {
 .whatsapp-button img:hover {
     transform: scale(1.1);
 }
+
+#objectives {
+    background: rgba(255, 192, 203, 0.2); /* Soft pink background */
+    padding: 40px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+#objectives h2 {
+    color: #d63384;
+    font-size: 2em;
+}
+
+#objectives ul {
+    list-style: none;
+    padding: 0;
+}
+
+#objectives li {
+    font-size: 1.2em;
+    padding: 10px 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
