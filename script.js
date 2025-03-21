@@ -50,4 +50,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     generateCalendar();
+
+    // Smooth scrolling effect when clicking navigation links
+    document.querySelectorAll('.nav-list a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
+
