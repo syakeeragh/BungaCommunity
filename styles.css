@@ -75,7 +75,7 @@ nav ul li a:hover {
 }
 
 .logo img:hover {
-    filter: brightness(1.5); /* Brighter on hover */
+    filter: brightness(1.8); /* Brighter on hover */
 }
 
 
