@@ -10,32 +10,45 @@ document.addEventListener("DOMContentLoaded", function () {
         "2025-12-25": "Christmas",
     };
 
-    let today = new Date();
-    let year = today.getFullYear();
-    let month = today.getMonth();
-    let firstDay = new Date(year, month, 1).getDay();
-    let daysInMonth = new Date(year, month + 1, 0).getDate();
-    let calendarBody = document.getElementById("calendar-body");
+    function generateCalendar() {
+        let today = new Date();
+        let year = today.getFullYear();
+        let month = today.getMonth();
+        let firstDay = new Date(year, month, 1).getDay();
+        let daysInMonth = new Date(year, month + 1, 0).getDate();
+        let calendarBody = document.getElementById("calendar-body");
 
-    let row = document.createElement("tr");
-    for (let i = 0; i < firstDay; i++) {
-        row.appendChild(document.createElement("td"));
-    }
+        // Clear previous content
+        calendarBody.innerHTML = "";
 
-    for (let day = 1; day <= daysInMonth; day++) {
-        let dateString = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-        let cell = document.createElement("td");
-        cell.textContent = day;
+        let row = document.createElement("tr");
 
-        if (malaysiaHolidays[dateString]) {
-            cell.classList.add("holiday");
-            cell.title = malaysiaHolidays[dateString];
+        // Fill empty cells for days before the 1st of the month
+        for (let i = 0; i < firstDay; i++) {
+            row.appendChild(document.createElement("td"));
         }
 
-        row.appendChild(cell);
-        if ((day + firstDay) % 7 === 0 || day === daysInMonth) {
-            calendarBody.appendChild(row);
-            row = document.createElement("tr");
+        for (let day = 1; day <= daysInMonth; day++) {
+            let dateString = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+            let cell = document.createElement("td");
+            cell.textContent = day;
+
+            // Highlight holidays
+            if (malaysiaHolidays[dateString]) {
+                cell.classList.add("holiday");
+                cell.setAttribute("title", malaysiaHolidays[dateString]);
+            }
+
+            row.appendChild(cell);
+
+            // Move to a new row every Sunday or at the end of the month
+            if ((day + firstDay) % 7 === 0 || day === daysInMonth) {
+                calendarBody.appendChild(row);
+                row = document.createElement("tr");
+            }
         }
     }
+
+    generateCalendar();
 });
+
