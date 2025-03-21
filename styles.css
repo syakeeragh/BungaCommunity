@@ -57,7 +57,7 @@ section {
 /* Logo */
 .logo {
     width: 150px;
-    border-radius: 70%;
+    border-radius: 50%;
     margin-bottom: 20px;
 }
 
@@ -78,7 +78,7 @@ p {
     font-size: 18px;
     color: #754C34;
     max-width: 80%;
-    margin: 10;
+    margin: 0 auto;
 }
 
 /* Objectives List */
