@@ -40,6 +40,17 @@ nav ul li a {
     font-weight: bold;
 }
 
+.logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo img {
+    width: 150px; /* Adjust size if needed */
+    height: auto;
+}
+
+
 nav ul li a:hover {
     text-decoration: underline;
 }
