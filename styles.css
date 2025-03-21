@@ -10,31 +10,38 @@ body {
 /* Navigation Bar */
 nav {
     background-color: #5B3A29;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* First row: Home, About, Objectives */
-.nav-top, .nav-bottom {
-    display: flex;
     justify-content: center;
-    gap: 2cm; /* Horizontal space between buttons */
+    align-items: center;
+    height: 40px; /* Collapsed height */
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
 }
 
+/* Expand on Hover */
+nav:hover {
+    height: 80px; /* Expanded height */
+}
 
+/* Navigation Items in One Row */
+.nav-container {
+    display: flex;
+    gap: 1.5cm; /* Adds 1.5cm horizontal space between buttons */
+}
 
+/* Style for Navigation Links */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    gap: 1.5cm; /* Ensure spacing between buttons */
 }
 
 nav ul li {
@@ -53,9 +60,11 @@ nav ul li a {
     display: inline-block;
 }
 
+/* Hover effect for the links */
 nav ul li a:hover {
     background-color: #FF8FA3;
 }
+
 
 /* Collapsible Navigation Bar */
 nav {
