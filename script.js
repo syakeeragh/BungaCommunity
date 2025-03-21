@@ -1,3 +1,4 @@
+// 🌸 1️⃣ Calendar Functionality
 document.addEventListener("DOMContentLoaded", function () {
     const malaysiaHolidays = {
         "2025-01-01": "New Year",
@@ -50,30 +51,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     generateCalendar();
+});
 
-    // Show only the first section on load
+// 🌸 2️⃣ Smooth Section Scrolling
+document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll('.content-section');
+    let currentSectionIndex = 0;
+    let isScrolling = false;
+
+    // Activate first section by default
     sections[0].classList.add('active');
 
-    // Smooth scrolling & show only selected section
+    function switchToSection(index) {
+        if (index >= 0 && index < sections.length) {
+            sections.forEach(sec => sec.classList.remove('active'));
+            sections[index].classList.add('active');
+            sections[index].scrollIntoView({ behavior: 'smooth' });
+            currentSectionIndex = index;
+        }
+    }
+
+    // Navbar Click Event
     document.querySelectorAll('.nav-list a').forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                // Hide all sections
-                sections.forEach(sec => sec.classList.remove('active'));
-
-                // Show the selected section
-                targetSection.classList.add('active');
-
-                // Smooth scroll
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+            let targetId = this.getAttribute('href').substring(1);
+            let targetIndex = Array.from(sections).findIndex(sec => sec.id === targetId);
+            switchToSection(targetIndex);
         });
+    });
+
+    // Scroll Detection for Manual Scrolling
+    window.addEventListener('wheel', function (event) {
+        if (isScrolling) return;
+        isScrolling = true;
+
+        if (event.deltaY > 0) {
+            // Scroll Down
+            switchToSection(currentSectionIndex + 1);
+        } else if (event.deltaY < 0) {
+            // Scroll Up
+            switchToSection(currentSectionIndex - 1);
+        }
+
+        setTimeout(() => (isScrolling = false), 800);
     });
 });
